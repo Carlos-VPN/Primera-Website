@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import "./styles 1.css"
 
+
 interface LoginProps {
     onLogin : (email:string, password:string) => void;
-
 }
 
     const Login: React.FC<LoginProps> = ({onLogin}) => {
@@ -45,8 +45,8 @@ interface LoginProps {
                             <button type="submit" className="login-button">Iniciar Sesión</button>
                         </form>
                         <div className="login-links">
-                            <a href="#">¿Olvidaste tu contraseña tilin?</a>
-                            <a href="#">Registrarse</a>
+                            <a href="/ForgotPassword">Forgot password?</a>
+                            <a href="/Register">Create account</a>
                         </div>
                     </div>
                 </div>

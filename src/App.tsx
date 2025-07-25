@@ -9,14 +9,18 @@ import './styles 1.css'
 
 
   const App:React.FC = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [userName, setUserName] = useState("");
-    const validUser = {email:"Carlitos@ucateci.edu.do", password:"123456", name:"Administrador"};
+    const savedAuth = localStorage.getItem('isAuthenticated') === 'true';
+    const savedUserName = localStorage.getItem('userName') || "";
+    const [isAuthenticated, setIsAuthenticated] = useState(savedAuth);
+    const [userName, setUserName] = useState(savedUserName);
+    const validUser = {email:"Carlitos@ucateci.edu.do", password:"123456", name:"Administrador", alias:"Guardian Canino"};
 
     const handleLogin = (email: String, password: String) => {
       if (email === validUser.email&&password===validUser.password){
         setIsAuthenticated(true);
-        setUserName(validUser.name);
+        setUserName(validUser.alias);
+        localStorage.setItem('isAuthenticated', 'true');
+        localStorage.setItem('userName', validUser.alias);
       } else{
         alert("usuario o contraseña incorrectos");
       }
@@ -25,6 +29,8 @@ import './styles 1.css'
     const handleLogout = () => {
     setIsAuthenticated(false);
     setUserName("");
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('userName');
     };
 
 
