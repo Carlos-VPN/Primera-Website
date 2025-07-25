@@ -31,3 +31,13 @@ Incluye:
 ## Observaciones
 
 El desarrollo se realizó en equipo, integrando diseño, estructura de archivos y funcionalidades básicas, con enfoque práctico y académico.
+
+## Próximas mejoras
+
+- Funcionalidad para recuperación de contraseña ("¿Olvidaste tu contraseña?")
+- Página de registro de nuevos usuarios
+
+## Observaciones
+
+El desarrollo se realizó en equipo, integrando diseño, estructura de archivos y funcionalidades básicas, con enfoque práctico y académico.
+
