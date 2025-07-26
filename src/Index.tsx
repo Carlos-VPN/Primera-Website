@@ -13,8 +13,8 @@ interface Animal {
 const AnimalsIndex: React.FC = () => {
   const [animales, setAnimales] = useState<Animal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  
 
-  useEffect(() => {
     const fetchAnimales = async () => {
       try {
         const response = await fetch("http://localhost:3000/index/animals", {
@@ -24,7 +24,7 @@ const AnimalsIndex: React.FC = () => {
         if (!response.ok) {
           throw new Error("Error al obtener los animales");
         }
-
+        
         const data = await response.json();
         setAnimales(data);
       } catch (error) {
@@ -33,9 +33,11 @@ const AnimalsIndex: React.FC = () => {
         setIsLoading(false);
       }
     };
-
-    fetchAnimales();
-  }, []);
+useEffect(() => {
+  fetchAnimales();
+}, []);
+   
+ 
   const HandleDelete = async(animal) => {
     try {
       const response = await fetch(`http://localhost:3000/animals/${animal}`, {
@@ -47,7 +49,9 @@ const AnimalsIndex: React.FC = () => {
       }
 
       const data = await response.json();
-      setAnimales(data);
+      alert(data.message);
+     
+     await fetchAnimales();
     } catch (error) {
       console.error("Error al obtener los animales:", error);
     }
