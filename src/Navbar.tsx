@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarPros> = ({ onLogout, userName }) => {
         <li><Link to="/gallery">Galería</Link></li>
         {/* Aquí ponemos enlace externo para ir al otro proyecto CRUD */}
         <li>
-          <a href="http://localhost:5174">CRUD</a>
+          <Link to="/index">CRUD</Link>
         </li>
         <li><button onClick={onLogout} className="logout-button">Cerrar Sesión</button></li>
       </ul>
