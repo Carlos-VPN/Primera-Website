@@ -12,6 +12,9 @@ import About from "./About";
 import Gallery from "./Gallery";
 import "./styles 1.css";
 import Register from "./Register";
+import AnimalsIndex from "./Index";
+import CreateAnimal from "./Create";
+import EditAnimal from "./Edit";
 const App: React.FC = () => {
   const savedAuth = localStorage.getItem("isAuthenticated") === "true";
   const savedUserName = localStorage.getItem("userName") || "";
@@ -65,6 +68,11 @@ const App: React.FC = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/login" element={<Navigate to="/" />} />
+                <Route path="/index" element={<AnimalsIndex />} />
+                <Route path="/create" element={<CreateAnimal />} />
+                <Route path="/index" element={<AnimalsIndex />} />
+                <Route path="/edit/:id" element={<EditAnimal />} />
+
               </>
             )}
           </Routes>
